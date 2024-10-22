@@ -1,17 +1,25 @@
 package com.platzi.platzi.market.percistance.entity;
 
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="compras_productos")
-public class ComprasProducto {
+public class CompraProducto {
     @Embedded
     private ComprasProductoPK id;
     private Integer cantidad;
     private Double total;
     private Boolean estado;
+    @ManyToOne
+    @JoinColumn(name = "id_compra", insertable = false, updatable = false)
+    private Compra compra;
+    @ManyToOne
+    @JoinColumn(name = "id_producto", insertable = false, updatable = false)
+    private Producto producto;
+
+
 
     public ComprasProductoPK getId() {
         return id;
