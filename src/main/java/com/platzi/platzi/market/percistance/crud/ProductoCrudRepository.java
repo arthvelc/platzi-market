@@ -19,8 +19,7 @@ public interface ProductoCrudRepository extends CrudRepository<Producto, Integer
     List<Producto> findByNombreContaining(String nombre);
 
     //Buscar productos por precio de venta mayor que un valor específico
-    List<Producto> findByPrecioVentaGreaterthan(Double precio);
-
+    List<Producto> findByPrecioVentaGreaterThan(Double precio);
     //Buscar los productos por estado
     List<Producto> findByEstado(Boolean estado);
 

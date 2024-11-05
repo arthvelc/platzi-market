@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 @Table(name="compras_productos")
 public class CompraProducto {
-    @Embedded
+    @EmbeddedId
     private ComprasProductoPK id;
     private Integer cantidad;
     private Double total;
@@ -20,7 +20,7 @@ public class CompraProducto {
     private Producto producto;
 
 
-
+    //Getters and Setters
     public ComprasProductoPK getId() {
         return id;
     }

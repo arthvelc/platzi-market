@@ -1,10 +1,12 @@
 package com.platzi.platzi.market.percistance.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.*;
+
+import java.io.Serializable;
 
 @Embeddable
-public class ComprasProductoPK {
+public class ComprasProductoPK implements Serializable {
+
     @Column(name="id_compra")
     private Integer idCompra;
     @Column(name="id_producto")
@@ -25,4 +27,6 @@ public class ComprasProductoPK {
     public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
     }
+
+
 }
