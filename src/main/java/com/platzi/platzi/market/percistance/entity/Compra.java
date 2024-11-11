@@ -3,6 +3,7 @@ package com.platzi.platzi.market.percistance.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,8 +23,8 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name="id_cliente", updatable = false, insertable = false) //no estoy seguro que sea id_cliente, si no que solo id.
     private Cliente cliente;
-    @OneToMany(mappedBy = "compra")
-    private List<CompraProducto> productos;
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
+    private List<CompraProducto> productos = new ArrayList<>();
 
     public Integer getIdCompra() {
         return idCompra;
@@ -71,5 +72,21 @@ public class Compra {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
     }
 }
