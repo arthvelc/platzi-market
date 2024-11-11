@@ -12,10 +12,10 @@ public class Producto {
     private String nombre;
     @Column(name="id_categoria")
     private Integer idCategoria;
-    @Column(name="codigo_barra")
+    @Column(name="codigo_barras")
     private String codigoBarra;
     @Column(name="precio_venta")
-    private Double PrecioVenta;
+    private Double precioVenta;
     @Column(name="cantidad_stock")
     private Integer cantidadStock;
     private Boolean estado;
@@ -56,11 +56,11 @@ public class Producto {
     }
 
     public Double getPrecioVenta() {
-        return PrecioVenta;
+        return precioVenta;
     }
 
     public void setPrecioVenta(Double precioVenta) {
-        PrecioVenta = precioVenta;
+        precioVenta = precioVenta;
     }
 
     public Integer getCantidadStock() {
